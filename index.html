@@ -1,13 +1,106 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" href="./resources/favicon.png" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Fira Code"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Fira Mono"
+		/>
+		<link rel="stylesheet" href="style.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="SyntheticDev" />
+		<meta
+			property="og:description"
+			content="A website for all my development work and documentation"
+		/>
+		<meta property="og:url" content="synthetic-dev.github.io" />
+		<!--<meta property="og:image" content="full thumbnail path" />-->
 		<title>SyntheticDev</title>
-		<!--<link rel="stylesheet" href="style.css">-->
-		<!--<script src="index.js" defer></script>-->
 	</head>
 	<body>
-		<h1>Under Development</h1>
+		<header>
+			<img alt="name" src="./resources/nameplate.png" />
+			<div class="wave" style="--wave-fill: var(--burple); bottom: 0">
+				<svg viewBox="0 0 500 150" preserveAspectRatio="none">
+					<!-- https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections -->
+					<path
+						d="M-1.41,96.22 C219.24,199.84 275.96,-2.44 500.27,29.13 L500.00,150.00 L0.00,150.00 Z"
+					></path>
+				</svg>
+			</div>
+		</header>
+		<main>
+			<h1>Info</h1>
+			<hr />
+			<h3>More development to be done soon</h3>
+			<br /><br />
+			<h2>Socials</h2>
+			<hr />
+			<section class="grid">
+				<a
+					class="link-single"
+					style="--link-color: #5865f2"
+					href="discord://discord.com/users/255733848162304002"
+				>
+					<p class="link">
+						<img
+							alt="img"
+							src="./resources/icons/discord.png"
+						/>Discord
+					</p>
+				</a>
+				<a
+					class="link-single"
+					style="--link-color: #50abf1"
+					href="https://twitter.com/SynthetickDev"
+				>
+					<p class="link">
+						<img
+							alt="img"
+							src="./resources/icons/twitter.png"
+						/>Twitter
+					</p>
+				</a>
+				<a
+					class="link-single"
+					style="--link-color: #ffffff"
+					href="https://github.com/Synthetic-Dev"
+				>
+					<p class="link">
+						<img
+							alt="img"
+							src="./resources/icons/github.png"
+						/>Github
+					</p>
+				</a>
+			</section>
+		</main>
+		<section class="footer">
+			<footer>
+				<div
+					class="wave"
+					style="
+						--wave-fill: var(--dark-burple);
+						height: 5rem;
+						top: -5rem;
+					"
+				>
+					<svg viewBox="0 0 500 150" preserveAspectRatio="none">
+						<!-- https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections -->
+						<path
+							d="M0.00,49.98 C149.26,23.20 324.77,120.89 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+						></path>
+					</svg>
+				</div>
+			</footer>
+		</section>
+		<!-- <script type="module" src="/main.js"></script> -->
 	</body>
 </html>

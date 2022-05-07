@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--burple: #003846;
+    --dark-burple: #002B36;
+    --text: rgb(245, 252, 255);
+    --link-icon: url(./resources/icons/discord.png);
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+	font-size: 0.875rem;
+    
+    background-color: var(--burple);
+    color: var(--text);
+}
+
+@media screen and (max-width: 30rem) {
+	body {
+		width: 100%;
+	}
+}
+
+header {
+    position: relative;
+	text-align: left;
+
+    min-height: 28rem;
+    background-image: url("./resources/code.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header img {
+    display: inline-block;
+    margin: 0 auto;
+    margin-left: 10%;
+    position: inherit;
+    top: 50%;
+    -ms-transform: translateY(70%);
+    transform: translateY(70%);
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 7rem;
+    overflow: hidden;
+}
+
+.wave svg {
+    height: 100%;
+    width: 100%;
+}
+
+.wave path {
+    stroke: none;
+    fill: var(--wave-fill);
+}
+
+main {
+    width: calc(100% - 2rem);
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+main :is(h1, h2, h3) {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 5rem;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 50rem) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 30rem) {
+	.grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-bottom: 1rem;
+}
+
+.grid :is(img) {
+    background-color: none;
+    max-height: 1.6em;
+    max-width: 1.6em;
+}
+
+.grid .link {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    height: 5rem;
+    padding: 1rem;
+    gap: 0.5em;
+}
+
+.grid :is(.link, .link img) {
+    transition: padding 0.5s ease, margin 0.5s ease
+}
+
+.grid .link::after {
+	content: "";
+    font-size: 1rem;
+	margin-left: auto;
+}
+
+.grid > .link-single {
+	display: flex;
+	flex-direction: column;
+
+	background-color: var(--dark-burple);
+	color: var(--text);
+	border: 2px solid var(--text);
+    border-radius: 0.5rem;
+
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.grid > .link-single:hover {
+	color: var(--dark-burple);
+	background-color: var(--link-color);
+	border-color: var(--link-color);
+}
+
+.grid > .link-single:hover .link {
+    padding-left: 15%;
+    padding-right: auto;
+}
+
+.grid > .link-single:hover :is(img) {
+    margin-right: 15%;
+}
+
+.grid > .link-single:active {
+	transform: scale(0.9);
+}
+
+.footer {
+    min-height: calc(10vh + 5rem);
+    display: flex; 
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+footer {
+    background-color: var(--dark-burple);
+    margin-top: auto;
+    display: block;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 5rem;
+}
