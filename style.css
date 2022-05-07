@@ -42,8 +42,9 @@ header img {
     margin-left: 10%;
     position: inherit;
     top: 50%;
-    -ms-transform: translateY(70%);
-    transform: translateY(70%);
+    -ms-transform: translateY(80%);
+    transform: translateY(80%);
+    max-width: 80%;
 }
 
 .wave {
@@ -69,7 +70,7 @@ main {
 	margin: 0 auto;
 }
 
-main :is(h1, h2, h3) {
+main :is(h1, h2, h3, h4) {
     padding-left: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -160,7 +161,7 @@ hr {
 }
 
 .footer {
-    min-height: calc(10vh + 5rem);
+    min-height: calc(100% + 5rem);
     display: flex; 
     flex-direction: column;
     margin-top: 5rem;
