@@ -9,6 +9,7 @@
     --dark-burple: #002B36;
     --text: rgb(245, 252, 255);
     --link-icon: url(./resources/icons/discord.png);
+    --image-sizing: cover
 }
 
 body {
@@ -87,6 +88,14 @@ main :is(h1, h2, h3, h4) {
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+    .grid .first-priority {
+        order: -10;
+    }
+
+    .grid .second-priority {
+        order: -9;
+    }
 }
 
 @media screen and (max-width: 30rem) {
@@ -101,6 +110,7 @@ a {
 
 hr {
     margin-bottom: 1rem;
+    border-style: dashed;
 }
 
 .grid :is(img) {
@@ -158,6 +168,12 @@ hr {
 
 .grid > .link-single:active {
 	transform: scale(0.9);
+}
+
+@media screen and (max-width: 50rem) {
+    .grid > .link-single.stretch {
+        grid-row-end: span var(--stretch-span);
+    }
 }
 
 .grid > .link-project {
@@ -250,9 +266,10 @@ hr {
 	width: 100%;
 	flex-grow: 1;
     background-image: var(--image-0);
-	background-size: cover;
+	background-size: var(--image-sizing);
 	background-position: center;
-    background-color: #000;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
 
 	transition: transform 0.2s ease;
     animation: var(--animation) 15s infinite;
@@ -264,6 +281,30 @@ hr {
 
 .grid > .link-project:hover .link {
     padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 30rem) {
+    .grid > .link-project.shrink {
+        grid-row-end: span 3;
+    }
+}
+
+@media screen and (max-width: 50rem) {
+    .grid > .link-project.collapse {
+        grid-row-end: span 1;
+        background-image: none;
+    }
+
+    .grid > .link-project.collapse > .link {
+        height: 5rem;
+        transition: padding 0.5s ease, margin 0.5s ease
+    }
+
+    .grid > .link-project.collapse:hover .link {
+        padding: 1rem;
+        padding-left: 25%;
+        padding-right: auto;
+    }
 }
 
 .footer {
