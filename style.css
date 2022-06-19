@@ -87,6 +87,20 @@ li {
     font-size: 1rem;
 }
 
+a {
+    color: #00b7ff;
+    text-decoration: unset;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin-bottom: 1rem;
+    border-style: dashed;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
@@ -119,14 +133,6 @@ li {
 	}
 }
 
-a {
-    text-decoration: none;
-}
-
-hr {
-    margin-bottom: 1rem;
-    border-style: dashed;
-}
 
 .grid :is(img) {
     background-color: none;
@@ -185,6 +191,7 @@ hr {
 }
 
 .grid > .link-single:hover {
+    text-decoration: none;
 	color: var(--black);
 	background-color: var(--link-color);
 	border-color: var(--link-color);
@@ -257,6 +264,7 @@ hr {
 }
 
 .grid > .link-project:hover {
+    text-decoration: none;
 	color: var(--black);
 	background-color: var(--link-colour);
 	border-color: var(--link-colour);
@@ -384,13 +392,4 @@ footer :is(p, h1, h2, h3, h4) {
     text-align: center;
     padding: 3rem;
     padding-bottom: 1rem;
-}
-
-footer a {
-    /* color: currentColor; */
-    text-decoration: unset;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
