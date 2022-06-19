@@ -5,11 +5,13 @@
 }
 
 :root {
-	--burple: #003846;
-    --dark-burple: #002B36;
+    --black: #1f1f1f;
+    --blue: #035170;
+    --light: #c5c7d1;
     --text: rgb(245, 252, 255);
     --link-icon: url(./resources/icons/discord.png);
-    --image-sizing: cover
+    --image-sizing: cover;
+    --columns: 3;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
     font-weight: 500;
 	font-size: 0.875rem;
     
-    background-color: var(--burple);
+    background-color: var(--black);
     color: var(--text);
 }
 
@@ -76,12 +78,24 @@ main :is(h1, h2, h3, h4) {
     margin-bottom: 0.5rem;
 }
 
+ul {
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+li {
+    font-size: 1rem;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 5rem;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat( auto-fit, minmax(1px, 3fr) );
+    grid-auto-rows: auto;
     gap: 1rem;
     padding: 2rem;
+    padding-top: 0.3rem;
+    height: fit-content;
 }
 
 @media screen and (max-width: 50rem) {
@@ -101,6 +115,7 @@ main :is(h1, h2, h3, h4) {
 @media screen and (max-width: 30rem) {
 	.grid {
 		grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat( auto-fit, 3fr );
 	}
 }
 
@@ -117,6 +132,22 @@ hr {
     background-color: none;
     max-height: 1.6em;
     max-width: 1.6em;
+}
+
+.grid > .info {
+	display: flex;
+	flex-direction: column;
+    /* grid-row-end: span 1; */
+    height: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1.3rem;
+
+	background-color: var(--blue);
+	color: var(--text);
+	border: 2px dashed var(--text);
+    border-radius: 0.5rem;
+
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
 }
 
 .grid .link {
@@ -142,8 +173,10 @@ hr {
 .grid > .link-single {
 	display: flex;
 	flex-direction: column;
+    /* grid-row-end: span 1; */
+    height: fit-content;
 
-	background-color: var(--dark-burple);
+	background-color: var(--blue);
 	color: var(--text);
 	border: 2px solid var(--text);
     border-radius: 0.5rem;
@@ -152,7 +185,7 @@ hr {
 }
 
 .grid > .link-single:hover {
-	color: var(--dark-burple);
+	color: var(--black);
 	background-color: var(--link-color);
 	border-color: var(--link-color);
 }
@@ -170,18 +203,21 @@ hr {
 	transform: scale(0.9);
 }
 
-@media screen and (max-width: 50rem) {
-    .grid > .link-single.stretch {
-        grid-row-end: span var(--stretch-span);
-    }
+.grid > .link-single > .desc {
+	width: 100%;
+	flex-grow: 1;
+    padding: 1rem;
+    padding-top: 0.1rem;
 }
 
 .grid > .link-project {
     display: flex;
     flex-direction: column;
+    min-height: 15rem;
     grid-row-end: span 3;
+    height: fit-content;
 
-    background-color: var(--dark-burple);
+    background-color: var(--blue);
 	color: var(--text);
 	border: 2px solid var(--text);
     border-radius: 0.5rem;
@@ -191,7 +227,13 @@ hr {
 }
 
 .grid > .link-project.link-project-large {
+    min-height: 22rem;
     grid-column-end: span 2;
+    grid-row-end: span 4;
+}
+
+.grid > .link-project.link-project-large.full {
+    grid-column-end: span 3;
     grid-row-end: span 4;
 }
 
@@ -215,7 +257,7 @@ hr {
 }
 
 .grid > .link-project:hover {
-	color: var(--dark-burple);
+	color: var(--black);
 	background-color: var(--link-colour);
 	border-color: var(--link-colour);
 }
@@ -295,6 +337,10 @@ hr {
         background-image: none;
     }
 
+    .grid > .link-project.collapse > .images {
+        min-height: 0;
+    }
+
     .grid > .link-project.collapse > .link {
         height: 5rem;
         transition: padding 0.5s ease, margin 0.5s ease
@@ -315,21 +361,36 @@ hr {
 }
 
 footer {
-    background-color: var(--dark-burple);
+    background-color: var(--blue);
     margin-top: auto;
     display: block;
     position: relative;
     bottom: 0;
     width: 100%;
-    min-height: 5rem;
+    min-height: 4rem;
+}
+
+footer h4 {
+    font-weight: 300;
+}
+
+@media screen and (max-width: 35rem) {
+    footer h4 {
+        font-size: 0.7rem;
+    }
 }
 
 footer :is(p, h1, h2, h3, h4) {
-    text-align: right;
-    padding-right: 3rem;
+    text-align: center;
+    padding: 3rem;
+    padding-bottom: 1rem;
 }
 
 footer a {
-    color: currentColor;
+    /* color: currentColor; */
+    text-decoration: unset;
+}
+
+footer a:hover {
     text-decoration: underline;
 }

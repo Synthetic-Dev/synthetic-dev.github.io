@@ -29,9 +29,9 @@
 		<title>SyntheticDev</title>
 	</head>
 	<body>
-		<header>
+		<header id="top">
 			<img alt="name" src="./resources/nameplate.png" />
-			<div class="wave" style="--wave-fill: var(--burple); bottom: 0">
+			<div class="wave" style="--wave-fill: var(--black); bottom: 0">
 				<svg viewBox="0 0 500 150" preserveAspectRatio="none">
 					<!-- https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections -->
 					<path
@@ -39,20 +39,36 @@
 					></path>
 				</svg>
 			</div>
+			<h1
+				style="
+					text-align: right;
+					position: absolute;
+					bottom: 1.5rem;
+					right: 2rem;
+				"
+			>
+				(Leon Semmens)
+			</h1>
 		</header>
 		<main>
 			<h1>Info</h1>
 			<hr />
 			<h3>
-				I am a self-taught programmer from the UK.<br /><br />I started
-				learning in 2016 and I have worked on many personal projects to
-				further develop my skills. Below are some of my more notable
-				projects, some of which are in active development. You can also
-				check out my socials.
+				👋 Hello!<br />I am a self-taught programmer/software engineer
+				in the UK from 13 years old. I have worked on many small
+				skill-building personal projects and have been a part of
+				multiple online development teams.<br /><br />Below are some of
+				my more notable projects, some of which are in active
+				development. It is difficult to show off a lot of my work since
+				it is usually backend code, however I aim to add more demo
+				projects here in the future.<br /><br />Also make sure to check
+				out <a href="#socials">my socials</a> to see what I am up to and
+				to get in contact.
 			</h3>
 			<br />
-			<h2>Projects</h2>
 			<hr />
+			<h1>Projects</h1>
+			<h2 style="padding-left: 2rem">On-going</h2>
 			<section class="grid">
 				<a
 					class="link-project collapse"
@@ -93,6 +109,9 @@
 						/>Pixelbyte.io
 					</p>
 				</a>
+			</section>
+			<h2 style="padding-left: 2rem">Previous work</h2>
+			<section class="grid" style="--columns: 4">
 				<a
 					class="link-project link-project-large"
 					style="--link-colour: #53c13a"
@@ -111,6 +130,23 @@
 					<p class="link">Spring Event 2021</p>
 				</a>
 				<a
+					class="link-project link-project-large"
+					style="--link-colour: #53c13a"
+					href="https://www.roblox.com/games/3602834524/UPDATE-The-Adventure-Games"
+				>
+					<div
+						class="images"
+						style="
+							--image-sizing: contain;
+							--image-0: url(resources/projects/tag/0.png);
+						"
+					></div>
+					<p class="link">The Adventure Games</p>
+				</a>
+			</section>
+			<h2 style="padding-left: 2rem">My Software</h2>
+			<section class="grid">
+				<a
 					class="link-single"
 					style="--link-color: #fdbc0d"
 					href="https://github.com/Synthetic-Dev/EzSpec"
@@ -120,6 +156,28 @@
 							alt="img"
 							src="./resources/icons/warning.png"
 						/>EzSpec
+					</p>
+					<p class="desc">
+						A unit testing framework for Roblox and Luau!<br />
+						Inspired by and forked from Boat's BoatTEST / Elttob's
+						FusionCI
+					</p>
+				</a>
+				<a
+					class="link-single"
+					style="--link-color: #2d94ce"
+					href="https://github.com/Synthetic-Dev/Hydrogen"
+				>
+					<p class="link">
+						<img
+							alt="img"
+							src="./resources/icons/hydrogen.png"
+						/>Hydrogen
+					</p>
+					<p class="desc">
+						Hydrogen is a UI instance to code conversion plugin just
+						like Roactify but is built for converting UI to Fusion
+						code instead.
 					</p>
 				</a>
 				<a
@@ -133,11 +191,39 @@
 							src="./resources/icons/serverstat.png"
 						/>Server Stat
 					</p>
+					<p class="desc">
+						A server status discord bot.<br />Currently inactive and
+						requiring a revamp.
+					</p>
 				</a>
+				<h3>with more to come!</h3>
 			</section>
-			<h2>Donate</h2>
 			<hr />
-			<h3>Help support me</h3>
+			<h1>Languages</h1>
+			<section class="grid" style="--columns: 2">
+				<div class="info">
+					<h2>Experienced in:</h2>
+					<ul>
+						<li>Lua / Luau</li>
+						<li>Javascript / Typescript</li>
+						<li>Python</li>
+					</ul>
+				</div>
+				<div class="info">
+					<h2>Improving in:</h2>
+					<ul>
+						<li>C#</li>
+						<li>Rust</li>
+						<li>Java</li>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>SQL</li>
+					</ul>
+				</div>
+			</section>
+			<hr />
+			<h1>Donate</h1>
+			<h3>Help support my work by giving a small donation:</h3>
 			<section class="grid">
 				<a
 					class="link-single"
@@ -152,8 +238,8 @@
 					</p>
 				</a>
 			</section>
-			<h2>Socials</h2>
 			<hr />
+			<h1 id="socials">Socials</h1>
 			<section class="grid">
 				<a
 					class="link-single"
@@ -227,17 +313,34 @@
 						/>Talent Hub
 					</p>
 				</a>
+				<a
+					class="link-single"
+					style="--link-color: #ffffff"
+					href="https://linktr.ee/syntheticdev"
+				>
+					<p class="link">
+						<img
+							alt="img"
+							src="./resources/icons/linktree.png"
+						/>Linktr.ee
+					</p>
+				</a>
+				<a
+					class="link-single"
+					style="--link-color: #ffffff"
+					href="mailto:leon.semmens2022@gmail.com"
+				>
+					<p class="link">
+						<img alt="img" src="./resources/icons/mail.png" />Email
+					</p>
+				</a>
 			</section>
 		</main>
 		<section class="footer">
 			<footer>
 				<div
 					class="wave"
-					style="
-						--wave-fill: var(--dark-burple);
-						height: 5rem;
-						top: -5rem;
-					"
+					style="--wave-fill: var(--blue); height: 5rem; top: -5rem"
 				>
 					<svg viewBox="0 0 500 150" preserveAspectRatio="none">
 						<!-- https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections -->
@@ -246,21 +349,33 @@
 						></path>
 					</svg>
 				</div>
-				<h3>Credit:</h3>
-				<h4>
-					Icons created by:
-					<a href="https://twitter.com/RhosGFX">Rhos</a>
-				</h4>
-				<h4>
-					Site inspiration:
-					<a href="https://elttob.github.io/">Visit</a>
-				</h4>
-				<h4>
-					Site repository:
+				<h4
+					style="
+						text-align: right;
+						position: absolute;
+						right: 0;
+						bottom: 1.8rem;
+					"
+				>
+					This site is also a project!<br />
 					<a
 						href="https://github.com/Synthetic-Dev/synthetic-dev.github.io"
-						>Click to view</a
+						>Website repository</a
 					>
+				</h4>
+				<h4
+					style="
+						text-align: left;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+					"
+				>
+					Icons created by:
+					<a href="https://twitter.com/RhosGFX">Rhos</a><br />
+					Site inspiration:
+					<a href="https://elttob.github.io/">Elttob</a>,
+					<a href="https://www.boyned.com/">Boyned</a>
 				</h4>
 			</footer>
 		</section>
